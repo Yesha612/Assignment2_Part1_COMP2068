@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  <div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="/projects/new"> Register </a>
+  <a href="/projects/login">Login</a>
+
+  //<a href="/projects/${project._id}/edit"> Edit User Profile </a>
+  //<a href="/projects/${project._id}/delete"> Delete User Profile </a>
+  </div>
+  h1 User List
+  ul
+    each project in projects
+      li
+        a(href=`/projects/login`)= project.Name

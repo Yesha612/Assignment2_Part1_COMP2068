@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  <div class="topnav">
+  <a href="/tournaments/create"> Create Tournament </a>
+  <a href="/projects/list">Go Back</a>
+  //<a href="/projects/${project._id}/edit"> Edit User Profile </a>
+  //<a href="/projects/${project._id}/delete"> Delete User Profile </a>
+  </div>
+  h1 Tournament List
+  ul
+    each tournament in turnaments
+      li
+        a(href=`/tournaments/${project._id}`)= tournament.Tournamentname

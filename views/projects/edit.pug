@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  <div class="topnav">
+  <a href="/projects"> Go Back </a>
+  <a class="active" href="/projects/${project._id}/edit"> Edit Profile </a>
+  <a href="/projects/${project._id}/delete"> Delete Profile </a>
+  </div>
+  h1= project.Name
+  form(method="POST")
+    input(name="Name" placeholder="name")
+    input(name="Password" placeholder="password")
+
+    button(type="submit") Save User

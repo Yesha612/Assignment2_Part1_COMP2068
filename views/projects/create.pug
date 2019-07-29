@@ -1,0 +1,19 @@
+
+extends ../layout
+
+
+block content
+  <div class="topnav">
+  <a class="active" href="#home">Create User</a>
+  <a href="/projects"> Go Back </a>
+  //<a href="/projects/${project._id}/edit"> Edit User Profile </a>
+  //<a href="/projects/${project._id}/delete"> Delete User Profile </a>
+  </div>
+  <h1> Create User Profile </h1>
+  <form name="Form" method="post">
+    <tr>Name: <input name="Name" placeholder="Enter Full Name Here" type="String" required></tr>
+    <br><tr>Password: <input name="Password" placeholder="Password" type="password" required></tr>
+    //<br><tr>Confirm Password: <input name="confirmpassword" placeholder=" Renter password" type="password"></tr>
+    <br><tr>Email: <input name="Email" placeholder="Email Address" type= "email" required></tr>
+    <br><tr>Create: <button> Submit  </button> </tr>
+  </form>
