@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  <div class="topnav">
+  <a href="/tournaments"> Go Back </a>
+  <a class="active" href="/tournaments/${tournament._id}/edit"> Edit Tournament </a>
+  <a href="/tournaments/${tournament._id}/delete"> Delete Tournament </a>
+  </div>
+  h1= tournament.Tournamentname
+  form(method="POST")
+    input(name="Tournamentname" placeholder="name")
+    input(name="StartDate" placeholder="starting date")
+    input(name="EndDate" placeholder="ending date")
+
+    button(type="submit") Save User

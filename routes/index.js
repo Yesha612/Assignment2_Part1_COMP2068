@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var projects = require('./controllers/projects');
 var tournaments = require('./controllers/tournaments');
+var players = require('./player');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -21,5 +22,15 @@ router.get('/tournaments', tournaments.getProjects);
 router.get('/tournaments/create', (req, res) => res.render('tournaments/create'));
 router.post('/tournaments/create', tournaments.createProject);
 router.get('/tournaments/:id', tournaments.getProjectById('tournaments/details'));
+router.get('/tournaments/:id/edit', tournaments.getProjectById('tournaments/edit'));
+router.post('/tournaments/:id/edit', tournaments.updateProjectById);
+router.get('/tournaments/:id/delete', tournaments.deleteProjectById);
+
+router.get('/players', players.getPlayers);
+router.get('/players/player', (req, res) => res.render('players/player'));
+router.post('/players/player', players.createPlayer);
+router.get('/players/:id/eight', players.getPlayer('players/eight'));
+router.get('/players/:id/sixteen', players.getPlayer('players/sixteen'));
+
 
 module.exports = router;

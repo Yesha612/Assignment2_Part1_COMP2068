@@ -24,7 +24,7 @@ exports.getProjectById = routePath => async (req, res, next) => {
   const id = req.params.id;
   const project = await Tournament.findById(id);
   console.log(project);
-  res.render(routePath, { tournament }); // Pass found project to details pug view
+  res.render(routePath, { project }); // Pass found project to details pug view
 };
 
 // Updating
@@ -33,12 +33,12 @@ exports.updateProjectById = async (req, res, next) => {
   const id = req.params.id;
   const body = req.body;
   try {
-    const project = await Tournament.findByIdAndUpdate(id, body, {
+    const tournament = await Tournament.findByIdAndUpdate(id, body, {
       runValidators: true,
       useFindAndModify: true,
       new: true
     });
-    res.redirect(`/tournaments/${project._id}`);
+    res.redirect(`/tournaments/${tournament._id}`);
   } catch (e) {
     res.json(e);
   }

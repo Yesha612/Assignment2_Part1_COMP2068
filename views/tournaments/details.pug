@@ -3,10 +3,10 @@ extends ../layout
 block content
   <div class="topnav">
   a(href="/projects") Go Back
-  //a(href=`/projects/${project._id}/edit`) Edit Project
-  //a(href=`/projects/${project._id}/delete`) Delete Project
+  a(href=`/tournaments/${project._id}/edit`) Edit Tournament
+  a(href=`/tournaments/${project._id}/delete`) Delete Tournament
   </div>
   
     h2 Hello there,
     h2= project.Name
-    h2= tournament.Discription
+    h2= project.Tournamentname

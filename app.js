@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+
 mongoose.connect(
   'mongodb+srv://example:example123@cluster0-uzvws.mongodb.net/test?retryWrites=true&w=majority',
   { useNewUrlParser: true }
@@ -15,7 +16,7 @@ db.once('open', () => console.log('Connection to mongodb'));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var playerRouter = require('./routes/player');
 
 var app = express();
 
@@ -31,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/player', playerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,13 +2,13 @@ extends ../layout
 
 block content
   <div class="topnav">
-  <a class="active" href="#home">Home</a>
+  <a class="active">Home</a>
   <a href="/projects/new"> Register </a>
   <a href="/players/player">Player</a>
 
   </div>
-  h1 User List
+  h1 Player List
   ul
-    each project in projects
+    each project in players
       li
-        a(href=`/projects/${project._id}`)= project.Name
+        a(href=`/players/${player._id}`)= project.Name
