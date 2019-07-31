@@ -1,4 +1,4 @@
-const Player = require('../models/player');
+const Player = require('../../models/player');
 
 exports.createPlayer = async (req, res, next) => {
     const body = req.body;
@@ -19,13 +19,6 @@ exports.getPlayers = async (req, res, next) => {
   
   // Read one Project (GET a PROJECT by it's ID)
   exports.getPlayerById = routePath => async (req, res, next) => {
-    const id = req.params.id;
-    const player = await Player.findById(id);
-    console.log(player);
-    res.render(routePath, { player }); // Pass found project to details pug view
-  };
-
-  exports.getPlayer = routePath => async (req, res, next) => {
     const id = req.params.id;
     const player = await Player.findById(id);
     console.log(player);
